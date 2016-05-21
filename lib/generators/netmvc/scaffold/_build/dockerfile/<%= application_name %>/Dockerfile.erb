@@ -32,5 +32,7 @@ ADD .nuget /<%= application_name %>/.nuget
 ADD web.config /<%= application_name %>/web.config
 ADD project.json /<%= application_name %>/project.json
 
+WORKDIR /<%= application_name %>
+
 ENTRYPOINT ["/bin/s6-svscan","/etc/s6"]
 CMD []
