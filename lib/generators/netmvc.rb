@@ -16,7 +16,7 @@ module Minke
       config.build_settings.build_commands = Minke::Generators::BuildCommands.new.tap do |bc|
         bc.fetch = [['/bin/bash', '-c', 'dotnet restore --packages ./.nuget']]
         bc.test = [['/bin/bash', '-c', 'NUGET_PACKAGES=./.nuget dotnet test']]
-        bc.build = [['/bin/bash', '-c', 'NUGET_PACKAGES=./.nuget dotnet build -c Release']]
+        bc.build = [['/bin/bash', '-c', 'rm -rf bin && rm -rf obj && NUGET_PACKAGES=./.nuget dotnet build -c Release']]
       end
 
       config.build_settings.docker_settings = Minke::Generators::DockerSettings.new.tap do |bs|
