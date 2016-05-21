@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/nicholasjackson/minke-generator-netmvc.svg?branch=master)](https://travis-ci.org/nicholasjackson/minke-generator-netmvc)  
 
-This generator creates a REST API microservice in .NET Core MVC.
+This generator creates a REST API Microservice in .NET Core MVC.
 
 ## Available variables for template (erb style)
 - <%= application_name %>: The name of the application executable
@@ -34,7 +34,7 @@ And then execute:
 Or install it yourself as:
 
     $ gem install minke-generator-netmvc
-    
+
 ## Usage
 
 TODO: Write usage instructions here
