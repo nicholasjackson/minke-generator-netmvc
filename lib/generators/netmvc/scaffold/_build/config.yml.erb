@@ -18,16 +18,16 @@ build:
     copy:
       -
         from: '../bin'
-        to: './dockerfile/<%= application_name %>/bin'
+        to: './dockerfile/<%= application_name %>'
       -
         from: '../.nuget'
-        to: './dockerfile/<%= application_name %>/.nuget'
+        to: './dockerfile/<%= application_name %>'
       -
         from: '../project.json'
-        to: './dockerfile/<%= application_name %>/project.json'
+        to: './dockerfile/<%= application_name %>'
       -
         from: '../web.config'
-        to: './dockerfile/<%= application_name %>/web.config'
+        to: './dockerfile/<%= application_name %>'
       -
         from: './swagger_spec/swagger.yml'
         to: './dockerfile/<%= application_name %>/swagger_spec'
