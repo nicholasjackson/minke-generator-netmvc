@@ -1,0 +1,36 @@
+FROM microsoft/dotnet:latest
+
+EXPOSE 5000
+
+# Install supervisor and consul-template
+RUN apt-get update
+RUN yes | apt-get install wget tar unzip
+
+# s6 overlay
+ADD https://github.com/just-containers/s6-overlay/releases/download/v1.17.2.0/s6-overlay-amd64.tar.gz /tmp/s6-overlay.tar.gz
+RUN tar xvfz /tmp/s6-overlay.tar.gz -C /; \
+rm -rf /etc/s6
+
+RUN wget https://releases.hashicorp.com/consul-template/0.14.0/consul-template_0.14.0_linux_386.zip; \
+unzip consul-template_0.14.0_linux_386.zip; \
+mv consul-template /bin/consul-template
+
+# Create directory for server files
+RUN mkdir /<%= application_name %>
+
+COPY s6-etc /etc/s6
+RUN chmod -R 755 /etc/s6; \
+chmod -R 755 /etc/s6
+
+# Add consul template
+COPY appsettings.ctmpl /<%= application_name %>/appsettings.ctmpl
+
+# Add server files
+ADD swagger_spec /swagger
+ADD bin /<%= application_name %>/bin
+ADD .nuget /<%= application_name %>/.nuget
+ADD web.config /<%= application_name %>/web.config
+ADD project.json /<%= application_name %>/project.json
+
+ENTRYPOINT ["/bin/s6-svscan","/etc/s6"]
+CMD []
