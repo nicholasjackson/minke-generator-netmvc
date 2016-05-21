@@ -1,12 +1,13 @@
-# Minke::Generators::GoMicroservice
+# Minke::Generators::NetMVC
 
-[![Build Status](https://travis-ci.org/nicholasjackson/minke-generator-go.svg?branch=master)](https://travis-ci.org/nicholasjackson/minke-generator-go)  
+[![Build Status](https://travis-ci.org/nicholasjackson/minke-generator-netmvc.svg?branch=master)](https://travis-ci.org/nicholasjackson/minke-generator-netmvc)  
 
-This generator creates a REST API microservice in Golang.
+This generator creates a REST API microservice in .NET Core MVC.
 
 ## Available variables for template (erb style)
 - <%= application_name %>: The name of the application executable
 - <%= namespace %>: Namespace of the application
+- <%= src_root %>: Source root of the application
 
 ## Testing your template
 ```
@@ -15,7 +16,7 @@ $ bundle
 
 Test your generator by running ...
 ```
-$ bundle exec minke -g minke-generator-template -o ../temp -a tester -n mynamespace
+$ bundle exec minke -g minke-generator-netmvc -o ../temp -a tester -n mynamespace
 ```
 
 ## Installation
@@ -23,7 +24,7 @@ $ bundle exec minke -g minke-generator-template -o ../temp -a tester -n mynamesp
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'minke-generator-template'
+gem 'minke-generator-netmvc'
 ```
 
 And then execute:
@@ -32,8 +33,8 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install minke-generator-template
-
+    $ gem install minke-generator-netmvc
+    
 ## Usage
 
 TODO: Write usage instructions here
