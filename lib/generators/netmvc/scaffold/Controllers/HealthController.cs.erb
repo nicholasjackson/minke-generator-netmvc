@@ -13,7 +13,7 @@ namespace <%= namespace %>.Controllers
         [HttpGet]
         public HealthResponse Get()
         {
-            return new HealthResponse { Status = "ok" };
+            return new HealthResponse { status = "ok" };
         }
     }
 }
