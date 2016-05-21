@@ -6,14 +6,14 @@ namespace <%= namespace %>.Controllers
     public class HealthController : Controller
     {
         public class HealthResponse {
-            public string status { get; set; }
+            public string Status { get; set; }
         }
 
         // GET api/health
         [HttpGet]
         public HealthResponse Get()
         {
-            return new HealthResponse { status = "ok" };
+            return new HealthResponse { Status = "OK" };
         }
     }
 }
