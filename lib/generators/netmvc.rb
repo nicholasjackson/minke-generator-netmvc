@@ -21,7 +21,7 @@ module Minke
 
       config.build_settings.docker_settings = Minke::Generators::DockerSettings.new.tap do |bs|
         bs.image = 'microsoft/dotnet:latest'
-        bs.binds = ["<%= src_root %>/src:/<%= application_name %>"]
+        bs.binds = ["<%= src_root %>:/<%= application_name %>"]
         bs.working_directory = '/<%= application_name %>' # working directory is added via a class patch to enable lazy load
       end
 
