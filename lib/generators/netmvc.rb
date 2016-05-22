@@ -10,14 +10,13 @@ module Minke
       config = Minke::Generators::Config.new
       config.name = 'minke-generator-netmvc'
       config.template_location = File.expand_path(File.dirname(__FILE__)) + '/netmvc/scaffold'
-      config.src_root = '/src'
 
       config.build_settings = Minke::Generators::BuildSettings.new
 
       config.build_settings.build_commands = Minke::Generators::BuildCommands.new.tap do |bc|
-        bc.fetch = [['/bin/bash', '-c', 'dotnet restore --packages ./.nuget']]
-        bc.test = [['/bin/bash', '-c', 'NUGET_PACKAGES=./.nuget dotnet test']]
-        bc.build = [['/bin/bash', '-c', 'rm -rf bin && rm -rf obj && NUGET_PACKAGES=./.nuget dotnet build -c Release']]
+        bc.fetch = [['/bin/bash', '-c', 'dotnet restore --packages .nuget']]
+        bc.test = [['/bin/bash', '-c', 'NUGET_PACKAGES=.nuget dotnet test']]
+        bc.build = [['/bin/bash', '-c', 'rm -rf bin && rm -rf obj && NUGET_PACKAGES=.nuget dotnet build -c Release']]
       end
 
       config.build_settings.docker_settings = Minke::Generators::DockerSettings.new.tap do |bs|

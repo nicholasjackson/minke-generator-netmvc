@@ -1,4 +1,5 @@
 #!/bin/bash
 
 cd /<%= application_name %>
+export NUGET_PACKAGES=.nuget 
 exec dotnet run
