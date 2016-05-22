@@ -20,9 +20,6 @@ build:
         from: '../bin'
         to: './dockerfile/<%= application_name %>'
       -
-        from: '../.nuget'
-        to: './dockerfile/<%= application_name %>'
-      -
         from: '../project.json'
         to: './dockerfile/<%= application_name %>'
       -

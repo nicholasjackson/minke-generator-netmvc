@@ -28,12 +28,13 @@ COPY appsettings.ctmpl /<%= application_name %>/appsettings.ctmpl
 # Add server files
 ADD swagger_spec /swagger
 ADD bin /<%= application_name %>/bin
-ADD .nuget /<%= application_name %>/.nuget
 ADD web.config /<%= application_name %>/web.config
 ADD project.json /<%= application_name %>/project.json
 
 WORKDIR /<%= application_name %>
 ENV NUGET_PACKAGES="/<%= application_name %>/.nuget"
+
+RUN dotnet restore --packages .nuget
 
 ENTRYPOINT ["/bin/s6-svscan","/etc/s6"]
 CMD []
