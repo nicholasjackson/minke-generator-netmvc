@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    minke-generator-netmvc (0.12.0)
+    minke-generator-netmvc (0.15.0)
 
 GEM
   remote: https://rubygems.org/
@@ -44,7 +44,7 @@ GEM
       multi_json
     mime-types (2.99.2)
     mini_portile2 (2.0.0)
-    minke (1.0.6)
+    minke (1.4.0)
       colorize
       consul_loader (~> 1.0)
       cucumber
