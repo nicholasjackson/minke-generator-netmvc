@@ -2,28 +2,21 @@
 
 [![Build Status](https://travis-ci.org/nicholasjackson/minke-generator-netmvc.svg?branch=master)](https://travis-ci.org/nicholasjackson/minke-generator-netmvc)  
 
-This generator creates a REST API Microservice in .NET Core MVC.
+This generator creates a REST API Microservice in .NET Core MVC for the Minke build and test system.
 
-## Available variables for template (erb style)
-- <%= application_name %>: The name of the application executable
-- <%= namespace %>: Namespace of the application
-- <%= src_root %>: Source root of the application
-
-## Testing your template
-```
-$ bundle
-```
-
-Test your generator by running ...
-```
-$ bundle exec minke -g minke-generator-netmvc -o ../temp -a tester -n mynamespace
-```
+## Available variables for templates (erb style)
+| Variable                | Description                            |
+| ----------------------- |                                        |
+| <%= application_name %> | The name of the application executable |
+| <%= namespace %>        | Namespace of the application           |
+| <%= src_root %>         | Source root of the application         |
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
+gem 'minke'
 gem 'minke-generator-netmvc'
 ```
 
@@ -31,13 +24,40 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
+Or install it yourself:
 
-    $ gem install minke-generator-netmvc
+```
+$ gem install minke
+$ gem install minke-generator-netmvc
+
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+To scaffold a new service run:
+
+```bash
+$ minke -g minke-generator-netmvc -o ~/nicholasjackson/helloworld
+  -a helloworld -n HelloWorld
+```
+
+You can now open the project in [VisualStudio Code](http://code.visualstudio.com) and run your first build.
+
+## Build and test with Docker
+To run a build with a Docker container, to execute the functional and unit tests you can use the following commands.  Please see the main Minke documentation for more information [http://nicholasjackson.github.io/minke/](http://nicholasjackson.github.io/minke/).
+
+### Build Application Code and Execute Unit tests
+```bash
+$ cd _build
+$ bundle
+$ rake app:test
+```
+
+### Build a Docker image and execute functional tests with Cucumber
+```bash
+$ rake app:build_image
+$ rake app:cucumber
+```
 
 ## Development
 
@@ -47,7 +67,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/minke-generator-template. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/nicholasjackson/minke-generator-netmvc. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 
 ## License
