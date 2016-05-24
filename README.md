@@ -4,6 +4,8 @@
 
 This generator creates a REST API Microservice in .NET Core MVC for the Minke build and test system.
 
+For information on Minke please see the documentation [http://nicholasjackson.github.io/minke/](http://nicholasjackson.github.io/minke/).
+
 ## Available variables for templates (erb style)
 | Variable                | Description                            |
 | ----------------------- |                                        |
