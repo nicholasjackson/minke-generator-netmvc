@@ -13,17 +13,19 @@ docker:
   application_compose_file: './dockercompose/<%= application_name %>/docker-compose.yml'
 fetch:
   enabled: true
+test:
+  enabled: true
 build:
   post:
     copy:
       -
-        from: '../bin'
+        from: '../src/<%= application_name %>/bin'
         to: './dockerfile/<%= application_name %>'
       -
-        from: '../project.json'
+        from: '../src/<%= application_name %>/project.json'
         to: './dockerfile/<%= application_name %>'
       -
-        from: '../web.config'
+        from: '../src/<%= application_name %>/web.config'
         to: './dockerfile/<%= application_name %>'
       -
         from: './swagger_spec/swagger.yml'

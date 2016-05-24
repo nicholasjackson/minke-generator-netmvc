@@ -1,11 +1,17 @@
-/<%= application_name %>
-/bin
-/obj
-.DS_Store
+# Application binaries
+/src/<%= application_name %>/bin
+/src/<%= application_name %>/obj
+/test/<%= application_name %>.Tests/bin
+/test/<%= application_name %>.Tests/obj
 /.nuget
+
+# Application build assets
 /_build/dockerfile/<%= application_name %>/bin
 /_build/dockerfile/<%= application_name %>/swagger_spec
 /_build/dockerfile/<%= application_name %>/swagger_spec
 /_build/dockerfile/<%= application_name %>/project.json
 /_build/dockerfile/<%= application_name %>/project.lock.json
 /_build/dockerfile/<%= application_name %>/web.config
+
+# Pesky mac files
+.DS_Store

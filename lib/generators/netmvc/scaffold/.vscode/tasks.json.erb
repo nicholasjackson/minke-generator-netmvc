@@ -8,10 +8,16 @@
     "tasks": [
         {
             "taskName": "build",
-            "args": [ ],
+            "args": ["./src/<%= application_name %>"],
             "isBuildCommand": true,
             "showOutput": "silent",
             "problemMatcher": "$msCompile"
+        },
+        {
+          "taskName": "test",
+          "args": ["./test/<%= application_name %>.Tests"],
+          "isBuildCommand": false,
+          "problemMatcher": "$msCompile"
         }
     ]
 }

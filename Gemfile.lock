@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    minke-generator-netmvc (0.10.0)
+    minke-generator-netmvc (0.12.0)
 
 GEM
   remote: https://rubygems.org/

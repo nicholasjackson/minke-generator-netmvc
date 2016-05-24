@@ -1,0 +1,29 @@
+{
+  "name": "<%= application_name %>.test",
+  "version": "1.0.0-*",
+  "buildOptions": {
+    "warningsAsErrors": true
+  },
+  "frameworks": {
+    "netcoreapp1.0": {
+      "imports": [ "dnxcore50", "portable-net45+win8" ],
+      "dependencies": {
+        "xunit": "2.1.0",
+        "dotnet-test-xunit": "1.0.0-rc2-build10015"
+      }
+    }
+  },
+  "dependencies": {
+    "<%= application_name %>": "1.*"
+  },
+  "testRunner": "xunit",
+  "runtimes": {
+    "ubuntu.14.04-x64": { },
+    "centos.7.1-x64": { },
+    "debian.8-x64": { },
+    "win7-x64": { },
+    "win81-x64": { },
+    "win10-x64": { },
+    "osx.10.11-x64": { }
+  }
+}
