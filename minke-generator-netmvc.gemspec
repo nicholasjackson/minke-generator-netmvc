@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = '.Net Core MVC microservice template for Minke'
   spec.description   = '.Net Core MVC  microservice for Minke, please see https://github.com/nicholasjackson/minkie for further details'
-  spec.homepage      = 'https://github.com/nicholasjackson/minkie-generator-netmvc'
+  spec.homepage      = 'https://github.com/nicholasjackson/minke-generator-netmvc'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
